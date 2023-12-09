@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+:root {
+    --bg-color: #2c2c2c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh; width: 100vw;
+    font: 600 normal 1rem Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+ul, li, a {
+    list-style: none;
+    text-decoration: none;
+    color: #fff;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+main {
+    height: 90vh;
+}
+
+header {
+    height: 26%;
+}
+
+#tp {
+    text-align: center;
+    margin-top: 20px;
+    font: normal 700 2rem Georgia;
+    letter-spacing: .18rem;
+    text-shadow: 5px 5px 8px #00000088;
+}
+
+#todo-stat {
+    display: block;
+    height: 80px; width: 80px;
+    background: #3d3d3d;
+    border: 2px solid;
+    border-radius: 50%;
+
+    margin: 10px auto;
+}
+
+section {
+    height: 60%; width: 90%;
+    margin: 10px auto;
+}
+
+#tasks {
+    height: 100%;
+    padding: 12px;
+    background: #3d3d3d;
+    border-radius: 10px;
+}
+
+menu {
+    position: absolute;
+    right: 10px;
+
+    border: solid;
+    
+}
+
+
+
+
+
+
+
+
+
+
+nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+
+    height: 10vh; width: 100vw;
+    border-top: 2px solid;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+
+
+    height: 100%;
+}
+
+nav li {
+    height: 100%; width: calc(80vw / 3);
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%; width: 100%;
+}
