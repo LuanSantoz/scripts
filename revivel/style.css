@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
 :root {
-    --bg-color: #2c2c2c;
+    --bg-color: #3d3d3d;
+    --bg-color1: #2c2c2c;
 }
 
 * {
@@ -22,12 +23,28 @@ ul, li, a {
     color: #fff;
 }
 
+button {
+    border: none;
+    background: none;
+    font: normal bold 1rem Arial;
+    color: #fff;
+    cursor: pointer;
+}
+
+input {
+    border: none;
+    background: none;
+    outline: none;
+    color: #fff;
+}
+
 body {
     background-color: var(--bg-color);
 }
 
 main {
-    height: 90vh;
+    height: 91vh;
+    overflow: hidden;
 }
 
 header {
@@ -45,7 +62,7 @@ header {
 #todo-stat {
     display: block;
     height: 80px; width: 80px;
-    background: #3d3d3d;
+    background: var(--bg-color1);
     border: 2px solid;
     border-radius: 50%;
 
@@ -54,26 +71,140 @@ header {
 
 section {
     height: 60%; width: 90%;
-    margin: 10px auto;
+    margin: 6px auto 15px auto;
 }
 
 #tasks {
     height: 100%;
-    padding: 12px;
-    background: #3d3d3d;
+    padding: 5px 10px;
+    background: var(--bg-color1);
     border-radius: 10px;
+
+    overflow: auto;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--bg-color);
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 3px #00000044;
+}
+
+.task:hover {
+    padding: 15px;
+}
+
+.task-check {
+    height: 30px; width: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+dialog {
+    position: relative;
+    top: 50%;
+    left: 50%;
+
+    height: 150px; width: 250px;
+    background-color: var(--bg-color1);
+    color: #fff;
+    padding: 10px;
+    border: 2px solid var(--bg-color);
+    border-radius: 10px;
+
+    transform: translate(-50%, -50%);
+}
+
+::backdrop {
+    background-color: #00000066;
+}
+
+#close-modal {
+    position: absolute;
+    top: -5px;
+    right: 5px;
+
+    font: normal 1.5rem Arial;
+    font-weight: lighter;
+}
+
+#add-task-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    height: 80%; width: 100%;
+    margin-top: 25px;
+}
+
+#add-task-info label {
+    margin: 0 0 10px 10px;
+}
+
+#task-desc {
+    height: 20px;
+    padding: 10px;
+    border-bottom: 2px solid #fff;
+    border-radius: 5px;
+}
+
+#add-task {
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+
+    height: 40px; width: 100px;
+
+    transform: translateX(-50%);
+}
+
+#menu-container {
+    position: relative;
+    right: -300px;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    width: 20%;
+    background-color: var(--bg-color1);
+    padding: 4px 5px;
+    border-radius: 100px 0px 0 100px;
+}
+
+#show-menu {
+    width: 100%;
 }
 
 menu {
-    position: absolute;
-    right: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 
-    border: solid;
-    
+    height: 20px; width: 0%;
+    visibility: hidden;
+
+    overflow: hidden;
 }
 
+#menu-container.active {
+    right: 0;
+    width: 100%;
+}
 
+#menu-container.active #show-menu {
+    width: 20%;
+}
 
+#menu-container.active menu {
+    width: 80%;
+    visibility: visible;
+}
 
 
 
@@ -86,8 +217,11 @@ nav {
     left: 0;
     bottom: 0;
 
-    height: 10vh; width: 100vw;
+    height: 8vh; width: 100vw;
+    background-color: var(--bg-color1);
     border-top: 2px solid;
+
+    z-index: 1;
 }
 
 nav ul {

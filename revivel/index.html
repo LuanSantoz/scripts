@@ -18,11 +18,27 @@
         <section id="todo-list">
             <div id="tasks"></div>
         </section>
+        <dialog>
+            <button id="close-modal">x</button>
 
-        <menu type="toolbar">
-            <button type="button" id="add-task">Add Task</button>
-            <button type="button" id="remove-all">Remove All</button>
-        </menu>
+            <div id="add-task-info">
+                <label for="task-desc">Task Name</label>
+                <input type="text" name="task-desc" id="task-desc">
+            </div>
+            
+            <button id="add-task">Add Task</button>
+        </dialog>
+
+        <div id="menu-container">
+            <button id="show-menu">Open</button>
+
+            <menu type="toolbar">
+    
+                <button type="button" id="show-modal">Add Task</button>
+    
+                <button type="button" id="remove-all">Remove All</button>
+            </menu>
+        </div>
     </main>
 
     <nav id="nav-bar">
