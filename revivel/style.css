@@ -166,7 +166,7 @@ dialog {
 
 #menu-container {
     position: relative;
-    right: -300px;
+    right: -80%;
 
     display: flex;
     justify-content: space-evenly;
