@@ -14,6 +14,10 @@ closeModal.addEventListener('click', () => {
 
 // colect and add task
 
+function checked() {
+    this.classList.toggle('checked')
+}
+
 const tasksContainer = document.querySelector('#tasks')
 const taskDesc = document.querySelector('#task-desc')
 const addTaskBtn = document.querySelector('#add-task')
@@ -23,9 +27,9 @@ addTaskBtn.addEventListener('click', () => {
     const taskName = document.createElement('p')
     const taskCheck = document.createElement('span')
 
-
     task.classList.add("task")
     taskCheck.classList.add("task-check")
+    taskCheck.onclick = checked
 
     taskName.innerText = taskDesc.value
 
@@ -42,9 +46,8 @@ addTaskBtn.addEventListener('click', () => {
 
 // open and close menu with buttons
 
- const menuContainer = document.querySelector('#menu-container')
- const showMenuBtn = document.querySelector('#show-menu')
- const removeAllBtn = document.querySelector('#remove-all')
+const menuContainer = document.querySelector('#menu-container')
+const showMenuBtn = document.querySelector('#show-menu')
 
 showMenuBtn.addEventListener('click', () => {
     menuContainer.classList.toggle('active')
@@ -52,5 +55,17 @@ showMenuBtn.addEventListener('click', () => {
         showMenuBtn.innerText = 'Close'
     } else {
         showMenuBtn.innerText = 'Open'
+    }
+})
+
+// remove all tasks
+
+const removeAllBtn = document.querySelector('#remove-all')
+
+removeAllBtn.addEventListener('click', () => {
+    const tasksCount = tasksContainer.childNodes
+    console.log(tasksContainer.childNodes)
+    for (let index = 0; index < tasksCount.length + 1; index++) {
+        tasksContainer.removeChild(tasksCount[index])
     }
 })

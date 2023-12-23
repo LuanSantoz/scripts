@@ -106,6 +106,10 @@ section {
     cursor: pointer;
 }
 
+.task-check.checked {
+    background: #09f;
+}
+
 dialog {
     position: relative;
     top: 50%;
