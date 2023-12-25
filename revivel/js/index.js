@@ -12,7 +12,7 @@ closeModal.addEventListener('click', () => {
     dialog.close()
 })
 
-// colect and add task
+// colect data and add task
 
 function checked() {
     this.classList.toggle('checked')
@@ -63,9 +63,11 @@ showMenuBtn.addEventListener('click', () => {
 const removeAllBtn = document.querySelector('#remove-all')
 
 removeAllBtn.addEventListener('click', () => {
-    const tasksCount = tasksContainer.childNodes
-    console.log(tasksContainer.childNodes)
-    for (let index = 0; index < tasksCount.length + 1; index++) {
-        tasksContainer.removeChild(tasksCount[index])
+    const taskList = tasksContainer.children
+    for (let index = 0; index < tasksContainer.children.length; index++) {
+        tasksContainer.removeChild(taskList.length)
+        taskList.pop()
+        console.log(taskList);
+        console.log(tasksContainer);
     }
 })
